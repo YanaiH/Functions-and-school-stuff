@@ -1,15 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace functionsSchoolStuff
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) // just for testing the IsEachNumOnce function
         {
+            int[] test = { 1, 2, 3, 4, 5, 6, 7, 8 };
+            if (MyMath.IsEachNumOnce(test))
+            {
+                Console.WriteLine("works");
+            }
+            else
+            {
+                Console.WriteLine("doesnt");
+            }
+            Console.ReadKey();
         }
+
     }
 }
