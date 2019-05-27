@@ -109,5 +109,25 @@ namespace functionsSchoolStuff
             }
             return eachNumOnce;
         }
+
+        public static bool IsSudoku(int[] nineNumbers)
+        {
+            if (nineNumbers.Length==9 && MyMath.IsEachNumOnce(nineNumbers))
+            {
+                bool Sudoku = true;
+                for (int i = 0; i < 9; i++)
+                {
+                    if (nineNumbers[i] > 9 || nineNumbers[i] < 1)
+                    {
+                        Sudoku = false;
+                    }
+                }
+                return Sudoku;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
