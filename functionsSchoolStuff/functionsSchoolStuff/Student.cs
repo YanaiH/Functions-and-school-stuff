@@ -10,7 +10,7 @@ namespace functionsSchoolStuff
 
         public Student(string name)
         {
-            if (name.Length>0)
+            if (name.Length > 0)
             {
                 this.name = name;
             }
@@ -39,22 +39,12 @@ namespace functionsSchoolStuff
 
         public double NiceAverage()
         {
-            int min = 101, sumWithoutLowest = 0;
+            int sumWithoutLowest = 0;
             for (int i = 0; i < numOfGrades; i++)
             {
-                if (grades[i] < min)
-                {
-                    if (min != 101)
-                    {
-                        sumWithoutLowest = sumWithoutLowest + min;
-                    }
-                    min = grades[i];
-                }
-                else
-                {
-                    sumWithoutLowest = sumWithoutLowest + grades[i];
-                }
+                sumWithoutLowest = sumWithoutLowest + grades[i];
             }
+            sumWithoutLowest = sumWithoutLowest - GetMinGrade();
             return sumWithoutLowest / (numOfGrades - 1);
         }
 
@@ -69,6 +59,19 @@ namespace functionsSchoolStuff
                 }
             }
             return min;
+        }
+
+        public int GetMaxGrade()
+        {
+            int max = -1;
+            for (int i = 0; i < numOfGrades; i++)
+            {
+                if (grades[i] > max)
+                {
+                    max = grades[i];
+                }
+            }
+            return max;
         }
     }
 }
