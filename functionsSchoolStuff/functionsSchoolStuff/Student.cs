@@ -36,5 +36,39 @@ namespace functionsSchoolStuff
             }
             return sum / numOfGrades;
         }
+
+        public double NiceAverage()
+        {
+            int min = 101, sumWithoutLowest = 0;
+            for (int i = 0; i < numOfGrades; i++)
+            {
+                if (grades[i] < min)
+                {
+                    if (min != 101)
+                    {
+                        sumWithoutLowest = sumWithoutLowest + min;
+                    }
+                    min = grades[i];
+                }
+                else
+                {
+                    sumWithoutLowest = sumWithoutLowest + grades[i];
+                }
+            }
+            return sumWithoutLowest / (numOfGrades - 1);
+        }
+
+        public int GetMinGrade()
+        {
+            int min = 101;
+            for (int i = 0; i < numOfGrades; i++)
+            {
+                if (grades[i] < min)
+                {
+                    min = grades[i];
+                }
+            }
+            return min;
+        }
     }
 }
