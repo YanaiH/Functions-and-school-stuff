@@ -18,7 +18,7 @@ namespace functionsSchoolStuff
             Console.ReadKey();
         }
 
-        static void Main()
+        static void Main() // just for experimenting
         {
             FatBoye[] fatBoyes = new FatBoye[3];
             for (int i = 0; i < fatBoyes.Length; i++)

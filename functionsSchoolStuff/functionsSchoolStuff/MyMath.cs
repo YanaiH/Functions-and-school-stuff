@@ -129,5 +129,33 @@ namespace functionsSchoolStuff
                 return false;
             }
         }
+
+        public static int NumOfAppearances(int num, int[] arrToCheck)
+        {
+            int countAppearances = 0;
+            for (int i = 0; i < arrToCheck.Length; i++)
+            {
+                if (arrToCheck[i] == num)
+                {
+                    countAppearances++;
+                }
+            }
+            return countAppearances;
+        }
+
+        public static int AppearsMost(int[] arr)
+        {
+            int mostAppearances = 0, numAppearsMost = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int Appearances = NumOfAppearances(arr[i], arr);
+                if (Appearances > mostAppearances)
+                {
+                    numAppearsMost = arr[i];
+                    mostAppearances = Appearances;
+                }
+            }
+            return numAppearsMost;
+        }
     }
 }
