@@ -18,7 +18,7 @@ namespace functionsSchoolStuff
             Console.ReadKey();
         }
 
-        static void Main() // just for experimenting
+        static void Main2() // just for experimenting
         {
             FatBoye[] fatBoyes = new FatBoye[3];
             for (int i = 0; i < fatBoyes.Length; i++)
@@ -27,6 +27,21 @@ namespace functionsSchoolStuff
                 fatBoyes[i].SetFat(true);
                 Console.WriteLine(fatBoyes[i].Name());
             }
+            Console.ReadKey();
+        }
+
+        static void Main() // dumb stuff for jumper class
+        {
+            Console.Write("Enter jumper's name: ");
+            string name = Console.ReadLine();
+            double[] jumps = new double[5];
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Enter jump height: ");
+                jumps[i] = double.Parse(Console.ReadLine());
+            }
+            Jumper test = new Jumper(name, jumps);
+            test.PrintJumper();
             Console.ReadKey();
         }
     }
