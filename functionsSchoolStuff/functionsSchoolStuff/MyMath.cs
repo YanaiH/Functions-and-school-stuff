@@ -130,6 +130,9 @@ namespace functionsSchoolStuff
             }
         }
 
+        //פעולת עזר
+        // num מקבלת מערך מספרים ומספר 
+        //מחזירה את כמות הפעמים בו המספר מופיע במערך
         public static int NumOfAppearances(int num, int[] arrToCheck)
         {
             int countAppearances = 0;
@@ -143,12 +146,18 @@ namespace functionsSchoolStuff
             return countAppearances;
         }
 
+        //מקבלת מערך מספרים
+        //מחזירה את המספר שהופיע הכי הרבה פעמים במערך
         public static int AppearsMost(int[] arr)
         {
-            int mostAppearances = 0, numAppearsMost = 0;
+            int mostAppearances = 0;  //הכמות הגבוהה ביותר של מספר המופעים
+            int numAppearsMost = 0;//המספר שהופיע הכי הרבה פעמים
+
             for (int i = 0; i < arr.Length; i++)
             {
+                //a[i] קורא לפעולת עזר שתבדוק כמה פעמים מופיע 
                 int Appearances = NumOfAppearances(arr[i], arr);
+
                 if (Appearances > mostAppearances)
                 {
                     numAppearsMost = arr[i];
