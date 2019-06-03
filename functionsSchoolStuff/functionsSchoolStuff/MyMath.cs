@@ -166,5 +166,18 @@ namespace functionsSchoolStuff
             }
             return numAppearsMost;
         }
+
+        public static int Median (int[] array)
+        {
+            Array.Sort(array);
+            if (array.Length % 2 != 0) 
+            {
+                return array[array.Length / 2];
+            }
+            else
+            {
+                return (array[array.Length / 2] + array[(array.Length / 2) - 1])/2;
+            }
+        }
     }
 }

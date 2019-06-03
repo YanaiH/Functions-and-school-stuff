@@ -30,7 +30,7 @@ namespace functionsSchoolStuff
             Console.ReadKey();
         }
 
-        static void Main() // dumb stuff for jumper class
+        static void Main3() // dumb stuff for jumper class
         {
             Console.Write("Enter jumper's name: ");
             string name = Console.ReadLine();
@@ -43,6 +43,32 @@ namespace functionsSchoolStuff
             Jumper test = new Jumper(name, jumps);
             test.PrintJumper();
             Console.ReadKey();
+        }
+
+        static void Main4() //test firstcapital
+        {
+            string test = "facebook";
+            Console.WriteLine(FirstCapital(test));
+            Console.ReadKey();
+        }
+
+        static void Main() //test median function
+        {
+            int[] test = {50,90,60,70};
+            Console.WriteLine(MyMath.Median(test));
+            Console.ReadKey();
+        }
+
+        static string FirstCapital (string oneWord)
+        {
+            char[] letters = oneWord.ToCharArray();
+            letters[0] = char.ToUpper(letters[0]);
+            oneWord = "";
+            for (int i = 0; i < letters.Length; i++)
+            {
+                oneWord = oneWord + letters[i];
+            }
+            return oneWord;
         }
     }
 }
