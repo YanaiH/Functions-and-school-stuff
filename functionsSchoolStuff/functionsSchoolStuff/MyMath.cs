@@ -109,5 +109,75 @@ namespace functionsSchoolStuff
             }
             return eachNumOnce;
         }
+
+        public static bool IsSudoku(int[] nineNumbers)
+        {
+            if (nineNumbers.Length==9 && MyMath.IsEachNumOnce(nineNumbers))
+            {
+                bool Sudoku = true;
+                for (int i = 0; i < 9; i++)
+                {
+                    if (nineNumbers[i] > 9 || nineNumbers[i] < 1)
+                    {
+                        Sudoku = false;
+                    }
+                }
+                return Sudoku;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        //פעולת עזר
+        // num מקבלת מערך מספרים ומספר 
+        //מחזירה את כמות הפעמים בו המספר מופיע במערך
+        public static int NumOfAppearances(int num, int[] arrToCheck)
+        {
+            int countAppearances = 0;
+            for (int i = 0; i < arrToCheck.Length; i++)
+            {
+                if (arrToCheck[i] == num)
+                {
+                    countAppearances++;
+                }
+            }
+            return countAppearances;
+        }
+
+        //מקבלת מערך מספרים
+        //מחזירה את המספר שהופיע הכי הרבה פעמים במערך
+        public static int AppearsMost(int[] arr)
+        {
+            int mostAppearances = 0;  //הכמות הגבוהה ביותר של מספר המופעים
+            int numAppearsMost = 0;//המספר שהופיע הכי הרבה פעמים
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                //a[i] קורא לפעולת עזר שתבדוק כמה פעמים מופיע 
+                int Appearances = NumOfAppearances(arr[i], arr);
+
+                if (Appearances > mostAppearances)
+                {
+                    numAppearsMost = arr[i];
+                    mostAppearances = Appearances;
+                }
+            }
+            return numAppearsMost;
+        }
+
+        public static int Median (int[] array)
+        {
+            Array.Sort(array);
+            if (array.Length % 2 != 0) 
+            {
+                return array[array.Length / 2];
+            }
+            else
+            {
+                return (array[array.Length / 2] + array[(array.Length / 2) - 1])/2;
+            }
+        }
     }
 }
